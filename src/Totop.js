@@ -62,7 +62,7 @@ class Totop extends React.Component {
 
     handleGotopClick() {
         let me = this;
-        me.scrollTo(document.body, me.props.to, me.props.duration);
+        me.scrollTo((document.body.scrollTop != 0 ? document.body : document.documentElement), me.props.to, me.props.duration);
     }
 
     render() {
