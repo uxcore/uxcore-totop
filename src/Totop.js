@@ -7,6 +7,8 @@
  */
 
 let classnames = require('classnames');
+let React = require('react'); 
+let ReactDOM = require('react-dom');
 
 class Totop extends React.Component {
 
