@@ -7,7 +7,7 @@
  */
 
 let classnames = require('classnames');
-let React = require('react'); 
+let React = require('react');
 let ReactDOM = require('react-dom');
 
 class Totop extends React.Component {
@@ -77,15 +77,20 @@ class Totop extends React.Component {
                 [me.props.theme]: !!me.props.theme,
                 "fn-clear": true
             })}>
-                <a className={classnames({
-                    "btn gotop": true,
+              <div className={classnames({
+                    "box gotop-box": true,
                     "show": me.state.showTotop
-                })} onClick={me.handleGotopClick.bind(me)}></a>
-                <div className={classnames({
-                    [me.props.prefixCls + "-other"]: true
                 })}>
-                    {me.props.children}
-                </div>
+                <a className="box-window btn" onClick={me.handleGotopClick.bind(me)}>
+                  <span className="box-text">顶部</span>
+                  <i className="kuma-icon kuma-icon-jiantou-copy box-icon"></i>
+                </a>
+              </div>
+              <div className={classnames({
+                  [me.props.prefixCls + "-other"]: true
+              })}>
+                  {me.props.children}
+              </div>
             </div>
         );
     }
@@ -96,7 +101,7 @@ Totop.defaultProps = {
     to: 10,
     duration: 600,
     distance: 30
-}
+};
 
 
 // http://facebook.github.io/react/docs/reusable-components.html
@@ -107,7 +112,7 @@ Totop.propTypes = {
     distance: React.PropTypes.number,
     duration: React.PropTypes.number,
     theme: React.PropTypes.string
-}
+};
 
 Totop.displayName = "Totop";
 

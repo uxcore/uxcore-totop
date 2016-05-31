@@ -41,8 +41,12 @@ class Demo extends React.Component {
         return (
             <div>
                 <Totop>
-                    <div className="block1">了解我们</div>
-                    <div className="block2"><i className="kuma-icon kuma-icon-comment"></i></div>
+                  <div className="box">
+                    <div className="box-window">
+                      <span className="box-text">评价</span>
+                      <i className="kuma-icon kuma-icon-shoucang1 box-icon"></i>
+                    </div>
+                  </div>
                 </Totop>
                 {mockData.map((item, index) => {
                     return <div key={index} className="demoDiv" style={{background: item.color}}>{"第" + item.index + "个区块"}</div>
