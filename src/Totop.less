@@ -9,17 +9,58 @@
 
 /* totop 组件样式 */
 
+@__totopPrefixCls: kuma-totop;
+@__toptopBoxWidth: 42px;
+@__totopBoxHeight: 42px;
+
 /* 普通尺寸，默认矩形风格 */
-.kuma-totop {
+.@{__totopPrefixCls} {
     position: fixed;
-    width: 42px;
+    width: @__toptopBoxWidth;
     bottom: 20px;
     right: 140px;
     .kuma-totop-other {
         width: 42px;
         float: left;
+        margin-top: 4px;
     }
-    .btn {
+    .box {
+        width: @__toptopBoxWidth;
+        height: @__totopBoxHeight;
+        box-sizing: border-box;
+        margin-top: 4px;
+        background-color: @basic-100;
+        border: 1px solid #e8e8e8;
+        font-size: 14px;
+    }
+    .box:hover {
+        background-color: @gray-light;
+        border-color: @gray-light;
+        .box-text {
+            display: inline-block;
+        }
+        .box-icon {
+            display: none;
+        }
+    }
+    .box-window {
+        display: block;
+        text-align: center;
+    }
+    .box-text {
+        display: none;
+        line-height: @__totopBoxHeight;
+        color: @basic-100;
+        font-size: 12px;
+        cursor: pointer;
+        //.user-select(none);
+    }
+    .box-icon {
+        font-size: 20px;
+        color: @gray-light;
+        line-height: @__totopBoxHeight;
+    }
+    /*.btn {
         line-height: 20px;
         display: block;
         clear: both;
@@ -36,24 +77,25 @@
         &:last-child {
             margin-bottom: 0;
         }
-    }
-    .gotop {
+    }*/
+
+    .gotop-box {
         display: none;
-        background-position: left top;
+        /*background-position: left top;
         &:hover {
             background-position: -52px 0;
             background-color: #b2b2b2;
-        }
+        }*/
         &.show {
-            display: inline;
+            display: block;
         }
     }
     .feedback {
-        background-position: 0 -44px;
+        /*background-position: 0 -44px;
         &:hover {
             background-position: -104px -44px;
             background-color: #b2b2b2;
-        }
+        }*/
     }
     /* 普通尺寸，默认矩形风格 end */
     /* 普通尺寸，圆形风格 */
@@ -116,7 +158,7 @@
     /* 圆形风格 end */
 }
 
- 
+
 
 
 @media screen and (min-width: 992px) {
@@ -159,7 +201,7 @@
 
 /* totop 组件样式 end */
 
- 
+
 
 
 
