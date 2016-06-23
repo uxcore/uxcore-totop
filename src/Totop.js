@@ -6,9 +6,10 @@
  * All rights reserved.
  */
 
-let classnames = require('classnames');
-let React = require('react');
-let ReactDOM = require('react-dom');
+const classnames = require('classnames');
+const React = require('react');
+const ReactDOM = require('react-dom');
+const Box = require('./TotopBox');
 
 class Totop extends React.Component {
 
@@ -86,14 +87,11 @@ class Totop extends React.Component {
                   <i className="kuma-icon kuma-icon-jiantou-copy box-icon"></i>
                 </a>
               </div>
-              <div className={classnames({
-                  [me.props.prefixCls + "-other"]: true
-              })}>
-                  {me.props.children}
-              </div>
+              {me.props.children}
             </div>
         );
     }
+
 }
 
 Totop.defaultProps = {
@@ -110,10 +108,11 @@ Totop.propTypes = {
     className: React.PropTypes.string,
     to: React.PropTypes.number,
     distance: React.PropTypes.number,
-    duration: React.PropTypes.number,
-    theme: React.PropTypes.string
+    duration: React.PropTypes.number
 };
 
 Totop.displayName = "Totop";
+
+Totop.Box = Box;
 
 module.exports = Totop;
