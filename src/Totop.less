@@ -60,106 +60,15 @@
         color: @gray-light;
         line-height: @__totopBoxHeight;
     }
-    /*.btn {
-        line-height: 20px;
-        display: block;
-        clear: both;
-        float: left;
-        overflow: hidden;
-        width: 42px;
-        height: 42px;
-        margin-bottom: 2px;
-        cursor: pointer;
-        text-align: center;
-        text-indent: -9999px;
-        background: #e0e0e0 url(https://gtms02.alicdn.com/tps/i2/TB1tsuQGXXXXXbmXXXXnHduKXXX-250-86.png) no-repeat;
-        background-position: left top;
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }*/
 
     .gotop-box {
         display: none;
-        /*background-position: left top;
-        &:hover {
-            background-position: -52px 0;
-            background-color: #b2b2b2;
-        }*/
         &.show {
             display: block;
         }
     }
-    .feedback {
-        /*background-position: 0 -44px;
-        &:hover {
-            background-position: -104px -44px;
-            background-color: #b2b2b2;
-        }*/
-    }
-    /* 普通尺寸，默认矩形风格 end */
-    /* 普通尺寸，圆形风格 */
-    &.mcircle {
-        .btn {
-            -webkit-border-radius: 42px;
-            -moz-border-radius: 42px;
-            border-radius: 42px;
-            background: url(https://gtms04.alicdn.com/tps/i4/TB1WZGQGXXXXXbIXXXXnHduKXXX-250-86.png) no-repeat;
-            background-color: #444;
-            background-position: left top;
-        }
-        .gotop {
-            background-position: 0 0;
-            &:hover {
-                background-color: #333;
-                background-position: -52px 0;
-            }
-        }
-        .feedback {
-            background-position: 0 -44px;
-            &:hover {
-                background-color: #333;
-                background-position: -104px -44px;
-            }
-        }
-    }
-    /* 普通尺寸，圆形风格 end */
-    /* large 圆形风格 */
-    &.lcircle {
-        .btn {
-            width: 52px;
-            height: 52px;
-            -webkit-border-radius: 52px;
-            -moz-border-radius: 52px;
-            border-radius: 52px;
-            background: url(https://gtms04.alicdn.com/tps/i4/TB1WZGQGXXXXXbIXXXXnHduKXXX-250-86.png) no-repeat;
-            background-color: #444;
-            background-position: left top;
-        }
-        .gotop {
-            background-position: 5px 5px;
-            &:hover {
-                background-color: #333;
-                background-position: -47px 5px;
-            }
-        }
-        .feedback {
-            background-position: 5px -39px;
-            &:hover {
-                background-color: #333;
-                background-position: -99px -39px;
-            }
-        }
-        .kuma-totop-other {
-            width: 52px;
-            float: left;
-        }
-    }
-    /* 圆形风格 end */
+
 }
-
-
-
 
 @media screen and (min-width: 992px) {
   #kuma-totop {
@@ -171,31 +80,6 @@
     .gotop:hover {
         background-position: -156px 0;
         background-color: #b2b2b2;
-    }
-    .feedback:hover {
-        background-position: -208px -44px;
-        background-color: #b2b2b2;
-    }
-    &.mcircle {
-        .gotop:hover {
-            background-position: -156px 0;
-            background-color: #333;
-        }
-        .feedback:hover {
-            background-position: -208px -44px;
-            background-color: #333;
-        }
-
-    }
-    &.lcircle {
-        .gotop:hover {
-            background-position: -151px 5px;
-            background-color: #333;
-        }
-        .feedback:hover {
-            background-position: -204px -39px;
-            background-color: #333;
-        }
     }
 }
 
