@@ -24,7 +24,6 @@ class TotopBox extends React.Component {
       </div>
     </div>)
   }
-//<span className="box-icon">{}</span>
 }
 
 TotopBox.displayName = 'TotopBox';
