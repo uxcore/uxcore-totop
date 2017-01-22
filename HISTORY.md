@@ -1,7 +1,8 @@
-# 0.2.1
+# 0.3.0
 
-`NEW` add new prop onTotopEnd
-`NEW` add tests
+* `NEW` add new prop onTotopEnd
+* `NEW` add tests
+* `CHANGED` update `uxcore-popover` to `~0.4.0`
 
 # 0.2.0
 

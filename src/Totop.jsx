@@ -9,7 +9,10 @@
 const classnames = require('classnames');
 const React = require('react');
 const addEventListener = require('rc-util/lib/Dom/addEventListener');
+const Animate = require('uxcore-animate');
 const Box = require('./TotopBox');
+const DefaultBox = require('./ToTopDefaultBox');
+const util = require('./util');
 
 class Totop extends React.Component {
 
@@ -22,10 +25,8 @@ class Totop extends React.Component {
 
   componentDidMount() {
     const me = this;
-    me.scrollHandler = addEventListener(window, 'scroll.totop', () => {
-      const y = (window.pageYOffset !== undefined) ?
-          window.pageYOffset :
-          (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    me.scrollHandler = addEventListener(window, 'scroll', () => {
+      const y = util.getWindowScrollY();
       if (y > me.props.distance && !me.state.showTotop) {
         me.setState({
           showTotop: true,
@@ -42,37 +43,39 @@ class Totop extends React.Component {
     const me = this;
     clearTimeout(me.timer);
     if (me.scrollHandler) {
-        me.scrollHandler.remove();
+      me.scrollHandler.remove();
     }
   }
 
-    /*
-     * scroll method to action like jQuery animation.
-     * @param element {DOM} scroll element
-     * @param to {number} the final scrollTop you want
-     * @param duration {number} scroll animation time (ms)
-     */
+  /**
+   * scroll method to action like jQuery animation.
+   * @param element {DOM} scroll element
+   * @param to {number} the final scrollTop you want
+   * @param duration {number} scroll animation time (ms)
+   */
 
-  scrollTo(element, to, duration, callback) {
+  scrollTo(to, duration, callback) {
     const me = this;
-    if (duration <= 0) return;
-    const difference = to - element.scrollTop;
-    const perTick = (difference / duration) * 10;
-
-    me.timer = setTimeout(() => {
-      element.scrollTop += perTick;
-      if (element.scrollTop === to) {
+    if (duration <= 0) {
+      if (callback) {
         callback();
-        return;
       }
-      me.scrollTo(element, to, duration - 10, callback);
+      return;
+    }
+    const y = util.getWindowScrollY();
+    const difference = to - y;
+    const perTick = (difference / duration) * 10;
+    console.log(y);
+    console.log(difference);
+    me.timer = setTimeout(() => {
+      util.setWindowScrollY(y + perTick);
+      me.scrollTo(to, duration - 10, callback);
     }, 10);
   }
 
   handleGotopClick() {
     const me = this;
     me.scrollTo(
-        (document.body.scrollTop !== 0 ? document.body : document.documentElement),
         me.props.to, me.props.duration, me.props.onTotopEnd
     );
   }
@@ -88,17 +91,14 @@ class Totop extends React.Component {
           'fn-clear': true,
         })}
       >
-        <div
-          className={classnames({
-            'box gotop-box': true,
-            show: me.state.showTotop,
-          })}
-        >
-          <a className="box-window btn" onClick={me.handleGotopClick.bind(me)}>
-            <span className="box-text">顶部</span>
-            <i className="kuma-icon kuma-icon-jiantou-copy box-icon" />
-          </a>
-        </div>
+        <Animate showProp="show" transitionName="fade">
+          <DefaultBox
+            show={me.state.showTotop}
+            onClick={() => {
+              this.handleGotopClick();
+            }}
+          />
+        </Animate>
         {me.props.children}
       </div>
     );

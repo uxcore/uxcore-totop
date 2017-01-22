@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src/TotopBox.jsx</title>
+    <title>Code coverage report for src/ToTopDefaultBox.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -16,28 +16,28 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../index.html">all files</a> / <a href="index.html">src/</a> TotopBox.jsx
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> ToTopDefaultBox.jsx
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">94.12% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>16/17</span>
+        <span class='fraction'>9/9</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">88.89% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>8/9</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/3</span>
+        <span class='fraction'>1/2</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>13/13</span>
+        <span class='fraction'>9/9</span>
       </div>
     </div>
   </div>
@@ -85,34 +85,17 @@
 40
 41
 42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+43</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">5×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">4×</span>
-<span class="cline-any cline-yes">4×</span>
-<span class="cline-any cline-yes">4×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -134,10 +117,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -146,62 +125,50 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
 &nbsp;
-function _defineProperty(obj, key, value) { <span class="missing-if-branch" title="if path not taken" >I</span>if (key in obj) { <span class="cstat-no" title="statement not covered" >Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); </span>} else { obj[key] = value; } return obj; }
-&nbsp;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var classnames = require('classnames');
 var React = require('react');
 &nbsp;
-var TotopBox = function TotopBox(props) {
-  var iconClass = 'box-icon';
-  var iconPropClass = props.icon &amp;&amp; props.icon.props &amp;&amp; props.icon.props.className;
-  if (iconPropClass) {
-    iconClass = classnames('box-icon', _defineProperty({}, iconPropClass, !!iconPropClass));
-  }
+var ToTopDefaultBox = function ToTopDefaultBox(props) {
   return React.createElement(
     'div',
     {
-      className: classnames(_defineProperty({
-        box: true
-      }, props.className, !!props.className)),
-      onClick: props.onClick.bind(undefined)
+      className: classnames({
+        'box gotop-box': true,
+        show: props.show
+      })
     },
     React.createElement(
-      'div',
-      { className: 'box-window' },
+      'a',
+      { className: 'box-window btn', onClick: props.onClick },
       React.createElement(
         'span',
         { className: 'box-text' },
-        props.label
+        '\u9876\u90E8'
       ),
-      props.icon &amp;&amp; React.cloneElement(props.icon, {
-        className: iconClass
-      })
+      React.createElement('i', { className: 'kuma-icon kuma-icon-jiantou-copy box-icon' })
     )
   );
 };
 &nbsp;
-TotopBox.displayName = 'TotopBox';
-&nbsp;
-TotopBox.propTypes = {
-  className: React.PropTypes.string,
-  label: React.PropTypes.string,
-  icon: React.PropTypes.element,
+ToTopDefaultBox.propTypes = {
+  show: React.PropTypes.bool,
   onClick: React.PropTypes.func
 };
 &nbsp;
-TotopBox.defaultProps = {
-  className: '',
-  label: '',
-  icon: null,
-  onClick: <span class="fstat-no" title="function not covered" >function onClick() {</span>}
+ToTopDefaultBox.defaultProps = {
+  show: false,
+  ooClick: <span class="fstat-no" title="function not covered" >function ooClick() {</span>}
 };
 &nbsp;
-module.exports = TotopBox;
+exports['default'] = ToTopDefaultBox;
+module.exports = exports['default'];
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
