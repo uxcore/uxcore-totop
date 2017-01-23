@@ -65,8 +65,6 @@ class Totop extends React.Component {
     const y = util.getWindowScrollY();
     const difference = to - y;
     const perTick = (difference / duration) * 10;
-    console.log(y);
-    console.log(difference);
     me.timer = setTimeout(() => {
       util.setWindowScrollY(y + perTick);
       me.scrollTo(to, duration - 10, callback);
