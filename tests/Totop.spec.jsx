@@ -40,14 +40,16 @@ describe('create Totop', () => {
     wrapper = mount(
       <Totop />
     );
-    expect(wrapper.find('.gotop-box')).to.have.length(1);
+    const popup = mount(wrapper.node.getComponent());
+    expect(popup.find('.gotop-box')).to.have.length(1);
   });
 
   it('should trigger Totop click event', () => {
     wrapper = mount(
       <Totop />
     );
-    wrapper.find('.gotop-box .btn').simulate('click');
+    const popup = mount(wrapper.node.getComponent());
+    popup.find('.gotop-box .btn').simulate('click');
     expect(Totop.prototype.handleGotopClick.calledOnce).to.be(true);
   });
 

@@ -18,7 +18,14 @@ const getWindowScrollY = () => {
   return 0;
 };
 
+const defaultGetContainer = () => {
+  const container = document.createElement('div');
+  document.body.appendChild(container);
+  return container;
+};
+
 export default {
   setWindowScrollY,
   getWindowScrollY,
+  defaultGetContainer,
 };

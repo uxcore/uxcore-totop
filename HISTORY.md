@@ -3,6 +3,7 @@
 * `NEW` add new prop onTotopEnd
 * `NEW` add tests
 * `CHANGED` update `uxcore-popover` to `~0.4.0`
+* `CHANGED` use `unstable_renderSubtreeIntoContainer`
 
 # 0.2.0
 
