@@ -9,19 +9,19 @@
 
 [![Sauce Test Status][sauce-image]][sauce-url]
 
-[npm-image]: http://img.shields.io/npm/v/uxcore-form.svg?style=flat-square
-[npm-url]: http://npmjs.org/package/uxcore-form
-[travis-image]: https://img.shields.io/travis/uxcore/uxcore-form.svg?style=flat-square
-[travis-url]: https://travis-ci.org/uxcore/uxcore-form
-[coveralls-image]: https://img.shields.io/coveralls/uxcore/uxcore-form.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/uxcore/uxcore-form?branch=master
-[dep-image]: http://img.shields.io/david/uxcore/uxcore-form.svg?style=flat-square
-[dep-url]: https://david-dm.org/uxcore/uxcore-form
-[devdep-image]: http://img.shields.io/david/dev/uxcore/uxcore-form.svg?style=flat-square
-[devdep-url]: https://david-dm.org/uxcore/uxcore-form#info=devDependencies
-[downloads-image]: https://img.shields.io/npm/dm/uxcore-form.svg
-[sauce-image]: https://saucelabs.com/browser-matrix/uxcore-form.svg
-[sauce-url]: https://saucelabs.com/u/uxcore-form
+[npm-image]: http://img.shields.io/npm/v/uxcore-totop.svg?style=flat-square
+[npm-url]: http://npmjs.org/package/uxcore-totop
+[travis-image]: https://img.shields.io/travis/uxcore/uxcore-totop.svg?style=flat-square
+[travis-url]: https://travis-ci.org/uxcore/uxcore-totop
+[coveralls-image]: https://img.shields.io/coveralls/uxcore/uxcore-totop.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/uxcore/uxcore-totop?branch=master
+[dep-image]: http://img.shields.io/david/uxcore/uxcore-totop.svg?style=flat-square
+[dep-url]: https://david-dm.org/uxcore/uxcore-totop
+[devdep-image]: http://img.shields.io/david/dev/uxcore/uxcore-totop.svg?style=flat-square
+[devdep-url]: https://david-dm.org/uxcore/uxcore-totop#info=devDependencies
+[downloads-image]: https://img.shields.io/npm/dm/uxcore-totop.svg
+[sauce-image]: https://saucelabs.com/browser-matrix/uxcore-totop.svg
+[sauce-url]: https://saucelabs.com/u/uxcore-totop
 
 
 #### setup develop environment
