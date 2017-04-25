@@ -14,60 +14,60 @@
 @__totopBoxHeight: 42px;
 
 /* 普通尺寸，默认矩形风格 */
+
 .@{__totopPrefixCls} {
-    position: fixed;
+  position: fixed;
+  width: @__toptopBoxWidth;
+  bottom: 20px;
+  right: 140px;
+  .kuma-totop-other {
+    width: 42px;
+    float: left;
+    margin-top: 4px;
+  }
+  .box {
     width: @__toptopBoxWidth;
-    bottom: 20px;
-    right: 140px;
-    .kuma-totop-other {
-        width: 42px;
-        float: left;
-        margin-top: 4px;
-    }
-    .box {
-        width: @__toptopBoxWidth;
-        height: @__totopBoxHeight;
-        box-sizing: border-box;
-        margin-top: 4px;
-        background-color: @basic-100;
-        border: 1px solid #e8e8e8;
-        font-size: 14px;
-    }
-    .box:hover {
-        background-color: @gray-light;
-        border-color: @gray-light;
-        .box-text {
-            display: inline-block;
-        }
-        .box-icon {
-            display: none;
-        }
-    }
-    .box-window {
-        display: block;
-        text-align: center;
-    }
+    height: @__totopBoxHeight;
+    border-radius: @global-border-radius;
+    box-sizing: border-box;
+    margin-top: 4px;
+    background-color: @basic-100;
+    font-size: 14px;
+  }
+  .box:hover {
     .box-text {
-        display: none;
-        line-height: @__totopBoxHeight;
-        color: @basic-100;
-        font-size: 12px;
-        cursor: pointer;
-        //.user-select(none);
+      display: inline-block;
     }
     .box-icon {
-        font-size: 20px;
-        color: @gray-light;
-        line-height: @__totopBoxHeight;
+      display: none;
     }
-
-    .gotop-box {
-        display: none;
-        &.show {
-            display: block;
-        }
+    .box-window {
+      background-color: @normal-alpha-4;
     }
-
+  }
+  .box-window {
+    border-radius: @global-border-radius;
+    display: block;
+    text-align: center;
+  }
+  .box-text {
+    display: none;
+    line-height: @__totopBoxHeight;
+    color: @basic-100;
+    font-size: 12px;
+    cursor: pointer; //.user-select(none);
+  }
+  .box-icon {
+    font-size: 20px;
+    color: @normal-alpha-4;
+    line-height: 40px;
+  }
+  .gotop-box {
+    display: none;
+    &.show {
+      display: block;
+    }
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -77,16 +77,11 @@
 }
 
 .kuma-totop.en {
-    .gotop:hover {
-        background-position: -156px 0;
-        background-color: #b2b2b2;
-    }
+  .gotop:hover {
+    background-position: -156px 0;
+    background-color: #b2b2b2;
+  }
 }
 
+
 /* totop 组件样式 end */
-
-
-
-
-
-
