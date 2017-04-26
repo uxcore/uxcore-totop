@@ -1,5 +1,7 @@
-const classnames = require('classnames');
-const React = require('react');
+import classnames from 'classnames';
+import React from 'react';
+import Icon from 'uxcore-icon';
+
 
 const ToTopDefaultBox = props => (
   <div
@@ -10,7 +12,7 @@ const ToTopDefaultBox = props => (
   >
     <a className="box-window btn" onClick={props.onClick}>
       <span className="box-text">顶部</span>
-      <i className="kuma-icon kuma-icon-jiantou-copy box-icon" />
+      <Icon name="fanhuidingbu" className="box-icon" />
     </a>
   </div>
 );

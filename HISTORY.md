@@ -1,3 +1,7 @@
+# 0.4.0
+
+* `CHANGED` new icon
+
 # 0.3.0
 
 * `NEW` add new prop onTotopEnd
