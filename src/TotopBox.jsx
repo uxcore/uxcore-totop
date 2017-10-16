@@ -1,5 +1,5 @@
-const classnames = require('classnames');
-const React = require('react');
+import classnames from 'classnames';
+import React from 'react';
 
 const TotopBox = (props) => {
   let iconClass = 'box-icon';
@@ -45,4 +45,4 @@ TotopBox.defaultProps = {
   onClick: () => {},
 };
 
-module.exports = TotopBox;
+export default TotopBox;

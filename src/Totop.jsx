@@ -6,14 +6,16 @@
  * All rights reserved.
  */
 
-const classnames = require('classnames');
-const React = require('react');
-const ReactDOM = require('react-dom');
-const addEventListener = require('rc-util/lib/Dom/addEventListener');
-const Animate = require('uxcore-animate');
-const Box = require('./TotopBox');
-const DefaultBox = require('./ToTopDefaultBox');
-const util = require('./util');
+
+import classnames from 'classnames';
+import React from 'react';
+import PropTypes from 'prop-types';
+import ReactDOM from 'react-dom';
+import addEventListener from 'rc-util/lib/Dom/addEventListener';
+import Animate from 'uxcore-animate';
+import Box from './TotopBox';
+import DefaultBox from './ToTopDefaultBox';
+import util from './util';
 
 class Totop extends React.Component {
 
@@ -62,10 +64,32 @@ class Totop extends React.Component {
     return this.container;
   }
 
+  getComponent() {
+    const me = this;
+    return (<div
+      className={classnames({
+        [me.props.prefixCls]: true,
+        [me.props.className]: !!me.props.className,
+        [me.props.theme]: !!me.props.theme,
+        'fn-clear': true,
+      })}
+    >
+      <Animate showProp="show" transitionName="fade">
+        <DefaultBox
+          show={me.state.showTotop}
+          onClick={() => {
+            this.handleGotopClick();
+          }}
+        />
+      </Animate>
+      {me.props.children}
+    </div>);
+  }
+
   handleGotopClick() {
     const me = this;
     me.scrollTo(
-        me.props.to, me.props.duration, me.props.onTotopEnd
+        me.props.to, me.props.duration, me.props.onTotopEnd,
     );
   }
 
@@ -104,27 +128,6 @@ class Totop extends React.Component {
     }, 10);
   }
 
-  getComponent() {
-    const me = this;
-    return (<div
-      className={classnames({
-        [me.props.prefixCls]: true,
-        [me.props.className]: !!me.props.className,
-        [me.props.theme]: !!me.props.theme,
-        'fn-clear': true,
-      })}
-    >
-      <Animate showProp="show" transitionName="fade">
-        <DefaultBox
-          show={me.state.showTotop}
-          onClick={() => {
-            this.handleGotopClick();
-          }}
-        />
-      </Animate>
-      {me.props.children}
-    </div>);
-  }
 
   renderComponent() {
     const me = this;
@@ -132,7 +135,7 @@ class Totop extends React.Component {
     ReactDOM.unstable_renderSubtreeIntoContainer(me, component, me.getContainer(),
       function fallback() {
         me.component = this;
-      }
+      },
     );
   }
 
@@ -154,17 +157,17 @@ Totop.defaultProps = {
 
 // http://facebook.github.io/react/docs/reusable-components.html
 Totop.propTypes = {
-  prefixCls: React.PropTypes.string,
-  className: React.PropTypes.string,
-  to: React.PropTypes.number,
-  distance: React.PropTypes.number,
-  duration: React.PropTypes.number,
-  onTotopEnd: React.PropTypes.func,
-  getContainer: React.PropTypes.func,
+  prefixCls: PropTypes.string,
+  className: PropTypes.string,
+  to: PropTypes.number,
+  distance: PropTypes.number,
+  duration: PropTypes.number,
+  onTotopEnd: PropTypes.func,
+  getContainer: PropTypes.func,
 };
 
 Totop.displayName = 'Totop';
 
 Totop.Box = Box;
 
-module.exports = Totop;
+export default Totop;

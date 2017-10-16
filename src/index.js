@@ -6,4 +6,6 @@
  * All rights reserved.
  */
 
-module.exports = require('./Totop');
+import Totop from './Totop';
+
+export default Totop;
