@@ -3,11 +3,14 @@
 import expect from 'expect.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { mount } from 'enzyme';
+import Enzyme, { mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15';
 import sinon from 'sinon';
 
 import Totop from '../src';
 import util from '../src/util';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 sinon.spy(Totop.prototype, 'handleGotopClick');
 
