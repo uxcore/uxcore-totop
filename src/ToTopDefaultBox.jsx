@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
+import PropTypes from 'prop-types';
 import Icon from 'uxcore-icon';
 
 
@@ -18,8 +19,8 @@ const ToTopDefaultBox = props => (
 );
 
 ToTopDefaultBox.propTypes = {
-  show: React.PropTypes.bool,
-  onClick: React.PropTypes.func,
+  show: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 ToTopDefaultBox.defaultProps = {

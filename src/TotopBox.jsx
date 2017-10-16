@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const TotopBox = (props) => {
   let iconClass = 'box-icon';
@@ -32,10 +33,10 @@ const TotopBox = (props) => {
 TotopBox.displayName = 'TotopBox';
 
 TotopBox.propTypes = {
-  className: React.PropTypes.string,
-  label: React.PropTypes.string,
-  icon: React.PropTypes.element,
-  onClick: React.PropTypes.func,
+  className: PropTypes.string,
+  label: PropTypes.string,
+  icon: PropTypes.element,
+  onClick: PropTypes.func,
 };
 
 TotopBox.defaultProps = {
