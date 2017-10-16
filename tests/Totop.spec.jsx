@@ -43,7 +43,7 @@ describe('create Totop', () => {
     wrapper = mount(
       <Totop />
     );
-    const popup = mount(wrapper.node.getComponent());
+    const popup = mount(wrapper.instance().getComponent());
     expect(popup.find('.gotop-box')).to.have.length(1);
   });
 
@@ -51,7 +51,7 @@ describe('create Totop', () => {
     wrapper = mount(
       <Totop />
     );
-    const popup = mount(wrapper.node.getComponent());
+    const popup = mount(wrapper.instance().getComponent());
     popup.find('.gotop-box .btn').simulate('click');
     expect(Totop.prototype.handleGotopClick.calledOnce).to.be(true);
   });
