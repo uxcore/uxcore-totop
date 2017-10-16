@@ -23,7 +23,7 @@ const getWrapperElement = () => {
 function createTotopAndScroll(to, duration, callback) {
   let totop;
   ReactDOM.render(
-    <div style={{ height: 3000 }}>
+    <div style={{ height: "3000px" }}>
       <Totop ref={(c) => { totop = c; }} />
     </div>,
     getWrapperElement()
