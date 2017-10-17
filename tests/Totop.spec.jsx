@@ -3,11 +3,14 @@
 import expect from 'expect.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { mount } from 'enzyme';
+import Enzyme, { mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15';
 import sinon from 'sinon';
 
 import Totop from '../src';
 import util from '../src/util';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 sinon.spy(Totop.prototype, 'handleGotopClick');
 
@@ -20,10 +23,10 @@ const getWrapperElement = () => {
 function createTotopAndScroll(to, duration, callback) {
   let totop;
   ReactDOM.render(
-    <div style={{ height: 3000 }}>
+    <div style={{ height: '3000px' }}>
       <Totop ref={(c) => { totop = c; }} />
     </div>,
-    getWrapperElement()
+    getWrapperElement(),
   );
   util.setWindowScrollY(2000);
   totop.scrollTo(to, duration, () => {
@@ -38,17 +41,17 @@ describe('create Totop', () => {
 
   it('should render gotop button', () => {
     wrapper = mount(
-      <Totop />
+      <Totop />,
     );
-    const popup = mount(wrapper.node.getComponent());
+    const popup = mount(wrapper.instance().getComponent());
     expect(popup.find('.gotop-box')).to.have.length(1);
   });
 
   it('should trigger Totop click event', () => {
     wrapper = mount(
-      <Totop />
+      <Totop />,
     );
-    const popup = mount(wrapper.node.getComponent());
+    const popup = mount(wrapper.instance().getComponent());
     popup.find('.gotop-box .btn').simulate('click');
     expect(Totop.prototype.handleGotopClick.calledOnce).to.be(true);
   });
@@ -81,7 +84,7 @@ describe('create Totop', () => {
 
   it('should remove scroll.totop event when componentWillUnmount', () => {
     wrapper = mount(
-      <Totop distance={100} />
+      <Totop distance={100} />,
     );
 
     sinon.spy(Totop.prototype, 'componentWillUnmount');

@@ -6,10 +6,9 @@
  * All rights reserved.
  */
 
-const React = require('react');
-const Popover = require('uxcore-popover');
-
-const Totop = require('../src');
+import React from 'react';
+import Popover from 'uxcore-popover';
+import Totop from '../src';
 
 const { Box } = Totop;
 

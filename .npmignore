@@ -22,7 +22,6 @@ out/
 .build
 .happypack
 node_modules
-coverage
 _site
 sea-modules
 spm_modules
