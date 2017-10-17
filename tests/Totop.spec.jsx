@@ -23,10 +23,10 @@ const getWrapperElement = () => {
 function createTotopAndScroll(to, duration, callback) {
   let totop;
   ReactDOM.render(
-    <div style={{ height: "3000px" }}>
+    <div style={{ height: '3000px' }}>
       <Totop ref={(c) => { totop = c; }} />
     </div>,
-    getWrapperElement()
+    getWrapperElement(),
   );
   util.setWindowScrollY(2000);
   totop.scrollTo(to, duration, () => {
@@ -41,7 +41,7 @@ describe('create Totop', () => {
 
   it('should render gotop button', () => {
     wrapper = mount(
-      <Totop />
+      <Totop />,
     );
     const popup = mount(wrapper.instance().getComponent());
     expect(popup.find('.gotop-box')).to.have.length(1);
@@ -49,7 +49,7 @@ describe('create Totop', () => {
 
   it('should trigger Totop click event', () => {
     wrapper = mount(
-      <Totop />
+      <Totop />,
     );
     const popup = mount(wrapper.instance().getComponent());
     popup.find('.gotop-box .btn').simulate('click');
@@ -84,7 +84,7 @@ describe('create Totop', () => {
 
   it('should remove scroll.totop event when componentWillUnmount', () => {
     wrapper = mount(
-      <Totop distance={100} />
+      <Totop distance={100} />,
     );
 
     sinon.spy(Totop.prototype, 'componentWillUnmount');
