@@ -1,6 +1,6 @@
 # 0.5.0
 
-* `CHANGED` update react version 15.0
+* `CHANGED` update react version 15.x
 
 # 0.4.0
 
