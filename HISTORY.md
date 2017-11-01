@@ -1,4 +1,4 @@
-# 0.4.0
+# 0.5.0
 
 * `CHANGED` update react version 15.0
 
