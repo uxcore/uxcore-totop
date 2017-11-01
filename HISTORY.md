@@ -1,5 +1,9 @@
 # 0.4.0
 
+* `CHANGED` update react version 15.0
+
+# 0.4.0
+
 * `CHANGED` new icon
 
 # 0.3.0
