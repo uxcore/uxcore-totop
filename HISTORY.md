@@ -1,3 +1,7 @@
+# 0.6.0
+* `CHANGED` adapt react@16.x
+* `CHANGED` update `uxcore-popover` to `^0.6.1`
+
 # 0.5.0
 
 * `CHANGED` update react version 15.x
