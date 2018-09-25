@@ -1,6 +1,10 @@
+# 0.6.1
+
+* `CHANGED` support js style export
+
 # 0.6.0
-* `CHANGED` adapt react@16.x
-* `CHANGED` update `uxcore-popover` to `^0.6.1`
+
+* `CHANGED` adapt react@16.x]
 
 # 0.5.0
 
