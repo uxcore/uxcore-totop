@@ -18,7 +18,6 @@ import DefaultBox from './ToTopDefaultBox';
 import util from './util';
 
 class Totop extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -66,36 +65,40 @@ class Totop extends React.Component {
 
   getComponent() {
     const me = this;
-    return (<div
-      className={classnames({
-        [me.props.prefixCls]: true,
-        [me.props.className]: !!me.props.className,
-        [me.props.theme]: !!me.props.theme,
-        'fn-clear': true,
-      })}
-    >
-      <Animate showProp="show" transitionName="fade">
-        <DefaultBox
-          show={me.state.showTotop}
-          onClick={() => {
-            this.handleGotopClick();
-          }}
-        />
-      </Animate>
-      {me.props.children}
-    </div>);
+    const { locale } = this.props;
+    return (
+      <div
+        className={classnames({
+          [me.props.prefixCls]: true,
+          [me.props.className]: !!me.props.className,
+          [me.props.theme]: !!me.props.theme,
+          'fn-clear': true,
+        })}
+      >
+        <Animate showProp="show" transitionName="fade">
+          <DefaultBox
+            locale={locale}
+            show={me.state.showTotop}
+            onClick={() => {
+              this.handleGotopClick();
+            }}
+          />
+        </Animate>
+        {me.props.children}
+      </div>
+    );
   }
 
   handleGotopClick() {
     const me = this;
     me.scrollTo(
-        me.props.to, me.props.duration, me.props.onTotopEnd,
+      me.props.to, me.props.duration, me.props.onTotopEnd,
     );
   }
 
   removeContainer() {
     if (this.container) {
-      const container = this.container;
+      const { container } = this;
       ReactDOM.unmountComponentAtNode(container);
       container.parentNode.removeChild(container);
       this.container = null;
@@ -135,15 +138,13 @@ class Totop extends React.Component {
     ReactDOM.unstable_renderSubtreeIntoContainer(me, component, me.getContainer(),
       function fallback() {
         me.component = this;
-      },
-    );
+      });
   }
 
 
   render() {
     return null;
   }
-
 }
 
 Totop.defaultProps = {
@@ -151,7 +152,8 @@ Totop.defaultProps = {
   to: 10,
   duration: 600,
   distance: 30,
-  onTotopEnd: () => {},
+  onTotopEnd: () => { },
+  locale: 'zh-cn',
 };
 
 
@@ -164,6 +166,7 @@ Totop.propTypes = {
   duration: PropTypes.number,
   onTotopEnd: PropTypes.func,
   getContainer: PropTypes.func,
+  locale: PropTypes.string,
 };
 
 Totop.displayName = 'Totop';

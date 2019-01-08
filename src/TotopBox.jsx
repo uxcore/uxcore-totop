@@ -19,7 +19,9 @@ const TotopBox = (props) => {
       onClick={props.onClick.bind(this)}
     >
       <div className="box-window">
-        <span className="box-text">{props.label}</span>
+        <span className="box-text">
+          {props.label}
+        </span>
         {
           props.icon && React.cloneElement(props.icon, {
             className: iconClass,

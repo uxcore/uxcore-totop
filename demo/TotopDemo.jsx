@@ -53,7 +53,7 @@ class Demo extends React.Component {
     );
     return (
       <div>
-        <Totop to={50}>
+        <Totop to={50} locale="en-us">
           <Box label="评价" icon={<i className="kuma-icon kuma-icon-shoucang1" />} onClick={this.onBoxClick.bind(this, 'pingjia')} />
           <Popover title="这是标题，可以隐藏" overlay={overlay} placement="leftBottom">
             <div className="box">

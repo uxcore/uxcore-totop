@@ -2,17 +2,20 @@ import classnames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from 'uxcore-icon';
+import i18n from './i18n';
 
 
-const ToTopDefaultBox = props => (
+const ToTopDefaultBox = ({ show, onClick, locale }) => (
   <div
     className={classnames({
       'box gotop-box': true,
-      show: props.show,
+      show,
     })}
   >
-    <a className="box-window btn" onClick={props.onClick}>
-      <span className="box-text">顶部</span>
+    <a className="box-window btn" onClick={onClick}>
+      <span className="box-text">
+        {i18n[locale].top}
+      </span>
       <Icon name="fanhuidingbu" className="box-icon" />
     </a>
   </div>
@@ -21,11 +24,13 @@ const ToTopDefaultBox = props => (
 ToTopDefaultBox.propTypes = {
   show: PropTypes.bool,
   onClick: PropTypes.func,
+  locale: PropTypes.string,
 };
 
 ToTopDefaultBox.defaultProps = {
   show: false,
-  ooClick: () => {},
+  onClick: () => { },
+  locale: 'zh-cn',
 };
 
 export default ToTopDefaultBox;
